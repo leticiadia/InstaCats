@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaCats</title>
+  </head>
+  <body>
+    {{#if session.userId}}
+        {{> navbarLogado}}
+    {{else}}
+        {{> navbar}}
+    {{/if}}
+
+    {{#if messages.message}}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {{messages.message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>    
+    {{/if}}
+
+    {{{ body }}}
+
+    {{> photos}}
+
+    {{> footer}}
+  </body>
+</html>
