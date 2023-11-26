@@ -41,4 +41,22 @@ module.exports = class UserController {
       console.error(error);
     }
   }
+
+  static async login(request, response) {
+    const { email, password } = request.body;
+
+    const user = await User.findOne({ where: { email: email } });
+
+    if (!user) {
+      request.flash("message", "Usuário não encontrado");
+      return response.render("layouts/main");
+    }
+
+    request.session.userId = user.id;
+
+    request.flash("message", `Seja bem-vindo ${user.name}`);
+    request.session.save(() => {
+      return response.redirect("/");
+    });
+  }
 };
