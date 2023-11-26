@@ -59,4 +59,10 @@ module.exports = class UserController {
       return response.redirect("/");
     });
   }
+
+  static logout(request, response) {
+    request.session.destroy();
+
+    return response.redirect("/");
+  }
 };
