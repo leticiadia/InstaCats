@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+#img-box img {
+  height: 60vh;
+  width: 100%;
+  position: relative;
+}
+
+.publication-box {
+  position: relative;
+}
+
+.publication-box img {
+  height: 60vh;
+}
+
+.publication-box .actions {
+  background-color: rgba(235, 100, 64, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.publication-box form button {
+  background: none;
+  border: none;
+}

@@ -1,0 +1,33 @@
+.navbar-bg{
+  background-color: #EB6440;
+}
+
+.navbar a img{
+  width: 70px;
+  transform: rotate(180deg);
+}
+
+.nav-link{
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-link:hover{
+  color: white;
+}
+
+.btn-bg{
+  background-color: #EB6440;
+  color: #FFF;
+  font-weight: 500;
+  transition: 0.6s;
+}
+
+.btn-bg:hover{
+  border: 1px solid #EB6440;
+  color: #000;
+}
