@@ -25,6 +25,13 @@ const publicationRouters = require("./routes/publicationRouters");
 // Configurando o handlebars
 const hbs = handlebars.create({
   partialsDir: ["views/partials"],
+  helpers: {
+    /**
+     * Este helper foi criado para converter os valores que estavam sendo emitidos
+     * e exibi-los num formato JSON.
+     */
+    json: (context) => JSON.stringify(context, null, 2),
+  },
 });
 
 app.engine("handlebars", hbs.engine);

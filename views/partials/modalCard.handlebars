@@ -4,12 +4,12 @@
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
+  onfocus="loadCat()"
 >
-
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-body img-container">
-          <img src="/assets/img/{{publication.image}}" alt="" />
+          <img id="selectedCat" alt="Gato selecionado" />
       </div>
       <form method="post" id="interactionForm">
         <div class="barra-interacao">
@@ -27,3 +27,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  function loadCat() {
+    const cat = document.querySelector("#selectedCat");
+    cat.src = `/assets/img/${this.cat.image}`;
+  }
+</script>

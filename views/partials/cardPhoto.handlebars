@@ -1,18 +1,20 @@
 <main class="container">
   <section class="row">
     {{#each publications}}
-      <article class="col-md-4 mt-1">
-        <a
-          class="img-box"
-          id="img-box"
-          data-bs-toggle="modal"
-          data-bs-target="#modalCard"
-        >
-          <img class="img-fluid" src="/assets/img/{{this.image}}" alt="" />
-        </a>
-      </article>
+    <article class="col-md-4 mt-1">
+      <a onclick="setSelectedCat({{ json this }})" class="img-box" id="img-box" data-bs-toggle="modal"
+        data-bs-target="#modalCard">
+        <img class="img-fluid" src="/assets/img/{{this.image}}" alt="" />
+      </a>
+    </article>
     {{/each}}
   </section>
 </main>
 
-{{> modalCard}}
+<script>
+  function setSelectedCat(cat) {
+    this.cat = cat;
+  }
+</script>
+
+{{> modalCard }}
