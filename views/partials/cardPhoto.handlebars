@@ -2,10 +2,7 @@
   <section class="row">
     {{#each publications}}
     <article class="col-md-4 mt-1">
-      {{!--
-      Aqui é onde está sendo utilizado o helper 'set', definido no server.js
-      --}}
-      <a onclick="{{ set 'selectedPublication' this }}" class="img-box" id="img-box" data-bs-toggle="modal"
+      <a onclick="setSelectedCat({{ json this }})" class="img-box" id="img-box" data-bs-toggle="modal"
         data-bs-target="#modalCard">
         <img class="img-fluid" src="/assets/img/{{this.image}}" alt="" />
       </a>
@@ -13,5 +10,11 @@
     {{/each}}
   </section>
 </main>
+
+<script>
+  function setSelectedCat(cat) {
+    this.cat = cat;
+  }
+</script>
 
 {{> modalCard }}

@@ -27,19 +27,10 @@ const hbs = handlebars.create({
   partialsDir: ["views/partials"],
   helpers: {
     /**
-     * Este helper foi criado para debugar os valores que estavam sendo emitidos
-     * e exibi-los num formato JSON. Seu uso é opcional, floquinho, pode apagar se desejar.
+     * Este helper foi criado para converter os valores que estavam sendo emitidos
+     * e exibi-los num formato JSON.
      */
     json: (context) => JSON.stringify(context, null, 2),
-    
-    /**
-     * Este helper foi criado para criar variáveis dinâmicas do handlebars após
-     * a inicialização do servidor. Seu uso é obrigatório pro modal saber qual
-     * das publications foi selecionada.
-     */
-    set: (variableName, variableValue, options) => {
-      options.data.root[variableName] = variableValue;
-    },
   },
 });
 
