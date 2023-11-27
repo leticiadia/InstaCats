@@ -1,18 +1,17 @@
 <main class="container">
   <section class="row">
     {{#each publications}}
-      <article class="col-md-4 mt-1">
-        <a
-          class="img-box"
-          id="img-box"
-          data-bs-toggle="modal"
-          data-bs-target="#modalCard"
-        >
-          <img class="img-fluid" src="/assets/img/{{this.image}}" alt="" />
-        </a>
-      </article>
+    <article class="col-md-4 mt-1">
+      {{!--
+      Aqui é onde está sendo utilizado o helper 'set', definido no server.js
+      --}}
+      <a onclick="{{ set 'selectedPublication' this }}" class="img-box" id="img-box" data-bs-toggle="modal"
+        data-bs-target="#modalCard">
+        <img class="img-fluid" src="/assets/img/{{this.image}}" alt="" />
+      </a>
+    </article>
     {{/each}}
   </section>
 </main>
 
-{{> modalCard}}
+{{> modalCard }}
